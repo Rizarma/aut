@@ -73,7 +73,7 @@ exports.config = {
     bail: 0,
     //
     // Saves a screenshot to a given path if a command fails.
-    screenshotPath: "./errorShots/",
+    screenshotPath: "./snapshot/",
     //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
@@ -129,6 +129,10 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
     reporters: ["dot", "mochawesome", "junit"],
+    mochawesomeOpts: {
+        includeScreenshots: true,
+        screenshotUseRelativePath: true
+    },
     reporterOptions: {
         outputDir: "./output",
         mochawesome_filename: "WDIO.mochawesome.json"
@@ -140,7 +144,7 @@ exports.config = {
     mochaOpts: {
         ui: "bdd",
         timeout: 30000
-    }
+    },
     //
     // =====
     // Hooks
@@ -171,11 +175,18 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function(capabilities, specs) {
-    //     const chai = require("chai");
-    //     global.expect = chai.expect;
-    //     chai.should();
-    // }
+    before: function(capabilities, specs) {
+        require("dotenv").config();
+
+        const fs = require("fs");
+        const path = require("path");
+
+        browser.addCommand("jepret", function(filename) {
+            var screenshot = browser.saveScreenshot(filename);
+            fs.writeFileSync(path.join("./output/mochawesome/snapshot/", filename), screenshot);
+            fs.unlinkSync(filename);
+        });
+    }
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name

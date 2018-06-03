@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Loket_homepage" timestamp="2018-06-04T02:22:35" time="7.39" tests="1" failures="0" errors="1" skipped="0">
+  <testsuite name="test_create_event" timestamp="2018-06-04T04:09:50" time="5.953" tests="2" failures="0" errors="0" skipped="0">
     <properties>
-      <property name="specId" value="9fcef5701de73c6ece1cf563b81a30ea"/>
-      <property name="suiteName" value="Loket homepage"/>
+      <property name="specId" value="ec661b8a293db6bf1d49dbdfcb0d05a7"/>
+      <property name="suiteName" value="test create event"/>
       <property name="capabilities" value="chrome"/>
-      <property name="file" value="./test/specs/simple.js"/>
+      <property name="file" value="./test/specs/create-event.js"/>
     </properties>
-    <testcase classname="chrome.Loket_homepage" name="should_open_the_right_page" time="7.388">
-      <error message="expected 'LOKET.COM: Buat Event Gratis, Atur &amp; Jual Eventmu Sendiri' to equal 'LOKET.COM: Buat Event Gratis, Atur &amp; Jual Eventmu Sendiris'"/>
+    <testcase classname="chrome.test_create_event" name="should_be_able_to_see_help_overlay" time="5.443">
       <system-out>
         <![CDATA[
-COMMAND: POST http://127.0.0.1:9515/session/ba79aed007a21fb6b7d51e8d88078b4e/url - {"url":"http://ss.dev.loket.id/"}
-RESULT: {"sessionId":"ba79aed007a21fb6b7d51e8d88078b4e","status":0,"value":null}
-COMMAND: GET http://127.0.0.1:9515/session/ba79aed007a21fb6b7d51e8d88078b4e/title - {}
-RESULT: {"sessionId":"ba79aed007a21fb6b7d51e8d88078b4e","status":0,"value":"LOKET.COM: Buat Event Gratis, Atur & Jual Eventmu Sendiri"}
-COMMAND: DELETE http://127.0.0.1:9515/session/ba79aed007a21fb6b7d51e8d88078b4e - {}
-RESULT: {"sessionId":"ba79aed007a21fb6b7d51e8d88078b4e","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:9515/session/ba8f4908677d653b29d54ae14be92591/url - {"url":"http://ss.dev.loket.id/buat-event"}
+RESULT: {"sessionId":"ba8f4908677d653b29d54ae14be92591","status":0,"value":null}
+COMMAND: GET http://127.0.0.1:9515/session/ba8f4908677d653b29d54ae14be92591/title - {}
+RESULT: {"sessionId":"ba8f4908677d653b29d54ae14be92591","status":0,"value":"Create Event - LOKET"}
+COMMAND: GET http://127.0.0.1:9515/session/ba8f4908677d653b29d54ae14be92591/screenshot - {}
+RESULT: null
 ]]>
       </system-out>
-      <system-err>
+    </testcase>
+    <testcase classname="chrome.test_create_event" name="should_be_able_to_create_event" time="0.507">
+      <system-out>
         <![CDATA[
-AssertionError: expected 'LOKET.COM: Buat Event Gratis, Atur & Jual Eventmu Sendiri' to equal 'LOKET.COM: Buat Event Gratis, Atur & Jual Eventmu Sendiris'
-    at Context.it (/Users/rizkia.m/Documents/github/ideas/aut1/test/specs/simple.js:12:44)
-    at new Promise (<anonymous>)
-    at new F (/Users/rizkia.m/Documents/github/ideas/aut1/node_modules/core-js/library/modules/_export.js:36:28)
+COMMAND: POST http://127.0.0.1:9515/session/ba8f4908677d653b29d54ae14be92591/element - {"using":"xpath","value":"//*[@id=\"modal-tour\"]/div/button"}
+RESULT: {"sessionId":"ba8f4908677d653b29d54ae14be92591","status":0,"value":{"ELEMENT":"0.879771371031018-1"}}
+COMMAND: POST http://127.0.0.1:9515/session/ba8f4908677d653b29d54ae14be92591/element/0.879771371031018-1/click - {}
+RESULT: {"sessionId":"ba8f4908677d653b29d54ae14be92591","status":0,"value":null}
+COMMAND: GET http://127.0.0.1:9515/session/ba8f4908677d653b29d54ae14be92591/screenshot - {}
+RESULT: null
+COMMAND: DELETE http://127.0.0.1:9515/session/ba8f4908677d653b29d54ae14be92591 - {}
+RESULT: {"sessionId":"ba8f4908677d653b29d54ae14be92591","status":0,"value":null}
 ]]>
-      </system-err>
+      </system-out>
     </testcase>
   </testsuite>
 </testsuites>

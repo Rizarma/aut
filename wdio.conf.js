@@ -138,7 +138,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: "bdd"
+        ui: "bdd",
+        timeout: 30000
     }
     //
     // =====
@@ -170,8 +171,11 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function (capabilities, specs) {
-    // },
+    // before: function(capabilities, specs) {
+    //     const chai = require("chai");
+    //     global.expect = chai.expect;
+    //     chai.should();
+    // }
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
@@ -196,8 +200,8 @@ exports.config = {
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function () {
-    // },
+    // beforeHook: function() {
+    // }
     /**
      * Hook that gets executed _after_ a hook within the suite ends (e.g. runs after calling
      * afterEach in Mocha)

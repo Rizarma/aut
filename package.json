@@ -5,13 +5,14 @@
     "main": "index.js",
     "scripts": {
         "test": "npx wdio wdio.conf.js",
-        "report":
-            "marge ./output/WDIO.mochawesome.json --autoOpen true -t 'Automated Test Report' -p 'Automated Test Report' -o ./output/mochawesome/"
+        "report": "marge ./output/WDIO.mochawesome.json --autoOpen true -t 'Automated Test Report' -p 'Automated Test Report' -o ./output/mochawesome/"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "chai": "^4.1.2",
+        "chai-webdriverio": "^0.4.3",
         "chromedriver": "^2.38.3",
         "dotenv": "^6.0.0",
         "mochawesome-report-generator": "^2.3.2",

@@ -1,0 +1,27 @@
+{
+    "name": "aut1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "npx wdio wdio.conf.js",
+        "report":
+            "marge ./output/WDIO.mochawesome.json --autoOpen true -t 'Automated Test Report' -p 'Automated Test Report' -o ./output/mochawesome/"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "chromedriver": "^2.38.3",
+        "dotenv": "^6.0.0",
+        "mochawesome-report-generator": "^2.3.2",
+        "wdio-junit-reporter": "^0.4.3",
+        "webdriverio": "^4.12.0"
+    },
+    "devDependencies": {
+        "wdio-chromedriver-service": "^0.1.3",
+        "wdio-dot-reporter": "0.0.9",
+        "wdio-mocha-framework": "^0.5.13",
+        "wdio-mochawesome-reporter": "^1.3.0"
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Open_homepage_loket" timestamp="2018-06-04T01:53:16" time="10.013" tests="1" failures="0" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="9fcef5701de73c6ece1cf563b81a30ea"/>
+      <property name="suiteName" value="Open homepage loket"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./test/specs/simple.js"/>
+    </properties>
+    <testcase classname="chrome.Open_homepage_loket" name="should_have_the_right_title" time="10.011">
+      <error message="Timeout of 10000ms exceeded. Try to reduce the run time or increase your timeout for test specs (http://webdriver.io/guide/testrunner/timeouts.html); if returning a Promise, ensure it resolves. (/Users/rizkia.m/Documents/github/ideas/aut1/test/specs/simple.js)"/>
+      <system-out>
+        <![CDATA[
+COMMAND: POST http://127.0.0.1:9515/session/c7d2b60ced17216a45b0ec4171a2ae1c/url - {"url":"http://ss.dev.loket.id/"}
+COMMAND: DELETE http://127.0.0.1:9515/session/c7d2b60ced17216a45b0ec4171a2ae1c - {}
+RESULT: {"sessionId":"c7d2b60ced17216a45b0ec4171a2ae1c","status":0,"value":null}
+COMMAND: GET http://127.0.0.1:9515/session/c7d2b60ced17216a45b0ec4171a2ae1c/title - {}
+RESULT: {"sessionId":"c7d2b60ced17216a45b0ec4171a2ae1c","status":0,"value":null}
+]]>
+      </system-out>
+      <system-err>
+        <![CDATA[
+Error: Timeout of 10000ms exceeded. Try to reduce the run time or increase your timeout for test specs (http://webdriver.io/guide/testrunner/timeouts.html); if returning a Promise, ensure it resolves. (/Users/rizkia.m/Documents/github/ideas/aut1/test/specs/simple.js)
+    at Test.Runnable._timeoutError (/Users/rizkia.m/Documents/github/ideas/aut1/node_modules/mocha/lib/runnable.js:440:10)
+    at Timeout.<anonymous> (/Users/rizkia.m/Documents/github/ideas/aut1/node_modules/mocha/lib/runnable.js:251:24)
+    at ontimeout (timers.js:466:11)
+    at tryOnTimeout (timers.js:304:5)
+    at Timer.listOnTimeout (timers.js:267:5)
+]]>
+      </system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -69,7 +69,7 @@ exports.config = {
         const path = require("path");
 
         browser.addCommand("jepret", function(filename) {
-            var screenshot = browser.saveScreenshot(filename);
+            const screenshot = browser.saveScreenshot(filename);
             fs.writeFileSync(path.join("./output/mochawesome/snapshot/", filename), screenshot);
             fs.unlinkSync(filename);
         });

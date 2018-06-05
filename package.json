@@ -4,13 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npx wdio wdio.conf.js | tap-notify",
+        "test": "npx wdio ./simple/wdio.conf.js",
         "report":
             "marge ./output/WDIO.mochawesome.json --autoOpen true -t 'Automated Test Report' -p 'Automated Test Report' -o ./output/mochawesome/",
-        "rmo": "rm -r output/*",
-        "rme": "rm -r errorShots",
-        "clean": "rm -r errorShots && rm -r output/*",
-        "fire": "npm run test && npm run report"
+        "fire": "npx wdio ./test/wdio.conf.js | tap-notify && npm run report"
     },
     "keywords": [],
     "author": "",

@@ -1,4 +1,7 @@
 .env
 .vscode
 
+output/*.json
+output/*.xml
 node_modules/
+snapshot/*

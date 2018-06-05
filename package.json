@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "npx wdio wdio.conf.js",
+        "test": "npx wdio wdio.conf.js | tap-notify",
         "report":
             "marge ./output/WDIO.mochawesome.json --autoOpen true -t 'Automated Test Report' -p 'Automated Test Report' -o ./output/mochawesome/",
         "rmo": "rm -r output/*",
@@ -21,7 +21,9 @@
         "chromedriver": "^2.38.3",
         "dotenv": "^6.0.0",
         "mochawesome-report-generator": "^2.3.2",
+        "tap-notify": "^1.0.0",
         "wdio-junit-reporter": "^0.4.3",
+        "wdio-tap-reporter": "0.0.5",
         "webdriverio": "^4.12.0"
     },
     "devDependencies": {

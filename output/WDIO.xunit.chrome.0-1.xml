@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="test_homepage" timestamp="2018-06-04T04:09:58" time="14.415" tests="2" failures="0" errors="0" skipped="0">
+  <testsuite name="test_homepage" timestamp="2018-06-05T20:27:45" time="6.565" tests="2" failures="0" errors="0" skipped="0">
     <properties>
       <property name="specId" value="9fcef5701de73c6ece1cf563b81a30ea"/>
       <property name="suiteName" value="test homepage"/>
       <property name="capabilities" value="chrome"/>
       <property name="file" value="./test/specs/simple.js"/>
     </properties>
-    <testcase classname="chrome.test_homepage" name="should_have_the_right_title" time="13.248">
+    <testcase classname="chrome.test_homepage" name="should_have_the_right_title" time="5.303">
       <system-out>
         <![CDATA[
-COMMAND: POST http://127.0.0.1:9515/session/eaf8688aedf73ccec1f7d7fd6cd8f3e2/url - {"url":"http://ss.dev.loket.id/"}
-RESULT: {"sessionId":"eaf8688aedf73ccec1f7d7fd6cd8f3e2","status":0,"value":null}
-COMMAND: GET http://127.0.0.1:9515/session/eaf8688aedf73ccec1f7d7fd6cd8f3e2/title - {}
-RESULT: {"sessionId":"eaf8688aedf73ccec1f7d7fd6cd8f3e2","status":0,"value":"LOKET.COM: Buat Event Gratis, Atur & Jual Eventmu Sendiri"}
+COMMAND: POST http://127.0.0.1:9515/session/3d962e00d5abf8ad71bb7a2e5af984ec/url - {"url":"http://ss.dev.loket.id/"}
+RESULT: {"sessionId":"3d962e00d5abf8ad71bb7a2e5af984ec","status":0,"value":null}
+COMMAND: GET http://127.0.0.1:9515/session/3d962e00d5abf8ad71bb7a2e5af984ec/title - {}
+RESULT: {"sessionId":"3d962e00d5abf8ad71bb7a2e5af984ec","status":0,"value":"LOKET.COM: Buat Event Gratis, Atur & Jual Eventmu Sendiri"}
 ]]>
       </system-out>
     </testcase>
-    <testcase classname="chrome.test_homepage" name="should_have_button_buat_eventmu_sekarang" time="1.166">
+    <testcase classname="chrome.test_homepage" name="should_have_button_buat_eventmu_sekarang" time="1.261">
       <system-out>
         <![CDATA[
-COMMAND: POST http://127.0.0.1:9515/session/eaf8688aedf73ccec1f7d7fd6cd8f3e2/url - {"url":"http://ss.dev.loket.id/"}
-RESULT: {"sessionId":"eaf8688aedf73ccec1f7d7fd6cd8f3e2","status":0,"value":null}
-COMMAND: POST http://127.0.0.1:9515/session/eaf8688aedf73ccec1f7d7fd6cd8f3e2/elements - {"using":"xpath","value":"//*[@id=\"landing-page\"]/div/div[2]/a"}
-RESULT: {"sessionId":"eaf8688aedf73ccec1f7d7fd6cd8f3e2","status":0,"value":[{"ELEMENT":"0.8691409815298383-1"}]}
-COMMAND: GET http://127.0.0.1:9515/session/eaf8688aedf73ccec1f7d7fd6cd8f3e2/screenshot - {}
+COMMAND: POST http://127.0.0.1:9515/session/3d962e00d5abf8ad71bb7a2e5af984ec/url - {"url":"http://ss.dev.loket.id/"}
+RESULT: {"sessionId":"3d962e00d5abf8ad71bb7a2e5af984ec","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:9515/session/3d962e00d5abf8ad71bb7a2e5af984ec/elements - {"using":"xpath","value":"//*[@id=\"landing-page\"]/div/div[2]/a"}
+RESULT: {"sessionId":"3d962e00d5abf8ad71bb7a2e5af984ec","status":0,"value":[{"ELEMENT":"0.8160125069052537-1"}]}
+COMMAND: GET http://127.0.0.1:9515/session/3d962e00d5abf8ad71bb7a2e5af984ec/screenshot - {}
 RESULT: null
-COMMAND: DELETE http://127.0.0.1:9515/session/eaf8688aedf73ccec1f7d7fd6cd8f3e2 - {}
-RESULT: {"sessionId":"eaf8688aedf73ccec1f7d7fd6cd8f3e2","status":0,"value":null}
+COMMAND: DELETE http://127.0.0.1:9515/session/3d962e00d5abf8ad71bb7a2e5af984ec - {}
+RESULT: {"sessionId":"3d962e00d5abf8ad71bb7a2e5af984ec","status":0,"value":null}
 ]]>
       </system-out>
     </testcase>

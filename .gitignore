@@ -3,4 +3,6 @@
 
 output/*.json
 output/*.xml
+output/mochawesome/assets/*
+output/mochawesome/WDIO.html
 node_modules/

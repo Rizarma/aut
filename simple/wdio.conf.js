@@ -1,5 +1,5 @@
 exports.config = {
-    specs: ["./simple/**/*.js"],
+    specs: ["./simple/specs/**/*.js"],
     exclude: [],
     maxInstances: 1,
     capabilities: [

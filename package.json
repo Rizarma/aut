@@ -7,7 +7,10 @@
         "test": "npx wdio ./simple/wdio.conf.js",
         "report": "marge ./output/WDIO.mochawesome.json --autoOpen true -t 'Automated Test Report' -p 'Automated Test Report' -o ./output/mochawesome/",
         "fire": "npx wdio ./test/wdio.conf.js | tap-notify && npm run report",
-        "clean": "rm snapshot/*"
+        "snap1": "rm snapshot/*",
+        "snap2": "rm output/mochawesome/snapshot/*",
+        "snap3": "rm output/*.json && rm output/*.xml",
+        "cleanup": "npm run snap1 && npm run snap2 && npm run snap3"
     },
     "keywords": [],
     "author": "",

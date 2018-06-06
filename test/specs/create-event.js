@@ -62,6 +62,7 @@ describe("test create event", () => {
         browser.click(buatEvent.pilih_tanggal);
         browser.click(buatEvent.tanggal_mulai);
         browser.click(buatEvent.tanggal_4);
+        browser.setDate('[name="event-end-daterange"]', "09 Jun 2018");
         browser.click(buatEvent.button_tanggal_event);
         browser.click(buatEvent.button_simpan_tanggal);
         browser.waitForVisible(buatEvent.modal_tanggal, 3000, true);
@@ -76,7 +77,26 @@ describe("test create event", () => {
         browser.pause(500);
         browser.waitForExist(buatEvent.dropdown_alamat);
         browser.click(buatEvent.dropdown_alamat);
+        browser.pause(500);
+        browser.waitForVisible(buatEvent.button_simpan_lokasi, 3000);
         browser.click(buatEvent.button_simpan_lokasi);
+        browser.waitForVisible(buatEvent.modal_lokasi, 3000, true);
         browser.jepret("create-event-9.png");
     });
+
+    // it("should be able to create paid ticket", () => {
+    //     browser.click(buatEvent.tiket_berbayar);
+    //     browser.setValue(buatEvent.nama_tiket_berbayar, "Berbayar");
+    //     browser.click(buatEvent.jumlah_tiket_berbayar);
+    //     browser.setValue(buatEvent.jumlah_tiket_berbayar, "200");
+    //     browser.setValue(buatEvent.harga_tiket_berbayar, "15000");
+    //     browser.setValue(buatEvent.deskripsi_tiket_berbayar, "Khusus untuk yang punya uang");
+    //     browser.click(buatEvent.button_selanjutnya_berbayar);
+    //     browser.click(buatEvent.tanggal_mulai_berbayar);
+    //     browser.click("/html/body/div[9]/div[1]/div[2]/table/tbody/tr[2]/td[7]");
+    //     browser.click(buatEvent.tanggal_berakhir_berbayar);
+    //     browser.click(buatEvent.tanggal_berakhir_pick);
+    //     browser.click(buatEvent.button_buat_tiket_berbayar);
+    //     browser.jepret("create-event-10.png");
+    // });
 });

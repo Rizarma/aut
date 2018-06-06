@@ -68,10 +68,67 @@ exports.config = {
         const fs = require("fs");
         const path = require("path");
 
-        browser.addCommand("jepret", function(filename) {
+        browser.addCommand("jepret", filename => {
             const screenshot = browser.saveScreenshot(filename);
             fs.writeFileSync(path.join("./output/mochawesome/snapshot/", filename), screenshot);
             fs.unlinkSync(filename);
+        });
+
+        browser.addCommand("setDate", (selector, time) => {
+            browser.execute(
+                (selector, time) => {
+                    const event = new Event("input", { bubbles: true });
+                    const element = document.querySelector(selector);
+
+                    element.removeAttribute("readonly");
+                    element.value = time;
+                    element.dispatchEvent(event);
+                },
+                selector,
+                time
+            );
+        });
+
+        browser.addCommand("strToInt", value => {
+            return value.match(/\d+/g).join("");
+        });
+
+        browser.addCommand("waitForUrl", function(value, timeout, revert) {
+            let url, actual;
+
+            try {
+                return browser.waitUntil(
+                    () => {
+                        url = browser.getUrl();
+                        actual = value === url;
+
+                        // This slash is added by Selenium
+                        if (typeof value === "string" && !value.endsWith("/")) {
+                            url = url.replace(/\/$/, "");
+                        }
+
+                        if (typeof value === "function") {
+                            actual = value(url);
+                        } else if (value[Symbol.match]) {
+                            actual = value.test(url);
+                        }
+
+                        if (revert) {
+                            actual = !actual;
+                        }
+
+                        return value && actual;
+                    },
+                    timeout,
+                    ""
+                );
+            } catch (error) {
+                let message = "Could not wait for required url:";
+                message += `\n\tActual: ${url}`;
+                message += `\n\tExpected: ${value}`;
+
+                throw new Error(message);
+            }
         });
     }
 
